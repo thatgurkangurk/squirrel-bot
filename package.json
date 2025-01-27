@@ -1,0 +1,17 @@
+{
+	"name": "squirrel-bot",
+	"module": "src/main.ts",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest"
+	},
+	"scripts": {
+		"lint": "biome check src",
+		"format": "biome check --write src"
+	},
+	"trustedDependencies": ["@biomejs/biome"],
+	"dependencies": {
+		"discord.js": "^14.17.3"
+	}
+}
