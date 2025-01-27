@@ -1,9 +1,13 @@
 import { directoryImport } from "directory-import";
 import { Client } from "discord.js";
 import { events } from "./collections";
+import { createConsola, type ConsolaInstance } from "consola";
 
 class ExtendedClient extends Client {
+  logger: ConsolaInstance = createConsola();
+
   async start(token?: string) {
+    this.logger.wrapConsole();
     this.loadEvents();
     await this.login(token);
   }
@@ -12,12 +16,10 @@ class ExtendedClient extends Client {
     try {
       directoryImport("../events");
     } catch (err) {
-      console.error("couldn't import all events");
+      this.logger.error(err);
     }
 
-    function log(from: string, ...args: unknown[]) {
-      console.log(`[${from}]`, ...args);
-    }
+    const logger = this.logger;
 
     for (const event of events) {
       if (event.options?.once) {
@@ -26,7 +28,7 @@ class ExtendedClient extends Client {
             {
               client: this,
               log(...args) {
-                log(event.name, ...args);
+                logger.info(`[${event.name}]`, ...args);
               },
             },
             ...args
@@ -38,7 +40,7 @@ class ExtendedClient extends Client {
             {
               client: this,
               log(...args) {
-                log(event.name, ...args);
+                logger.info(`[${event.name}]`, ...args);
               },
             },
             ...args
