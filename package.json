@@ -12,6 +12,7 @@
 	},
 	"trustedDependencies": ["@biomejs/biome"],
 	"dependencies": {
+		"directory-import": "^3.3.2",
 		"discord.js": "^14.17.3"
 	}
 }

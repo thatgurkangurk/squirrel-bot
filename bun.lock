@@ -4,6 +4,7 @@
     "": {
       "name": "squirrel-bot",
       "dependencies": {
+        "directory-import": "^3.3.2",
         "discord.js": "^14.17.3",
       },
       "devDependencies": {
@@ -61,6 +62,8 @@
     "@vladfrangu/async_event_emitter": ["@vladfrangu/async_event_emitter@2.4.6", "", {}, "sha512-RaI5qZo6D2CVS6sTHFKg1v5Ohq/+Bo2LZ5gzUEwZ/WkHhwtGTCB/sVLw8ijOkAUxasZ+WshN/Rzj4ywsABJ5ZA=="],
 
     "bun-types": ["bun-types@1.2.0", "", { "dependencies": { "@types/node": "*", "@types/ws": "~8.5.10" } }, "sha512-KEaJxyZfbV/c4eyG0vyehDpYmBGreNiQbZIqvVHJwZ4BmeuWlNZ7EAzMN2Zcd7ailmS/tGVW0BgYbGf+lGEpWw=="],
+
+    "directory-import": ["directory-import@3.3.2", "", {}, "sha512-dSApZXgx29qO/6AVigdsoC6HSvaHWinJ4HTRPKrlMAxX71FgPzn/WEWbgM+aB1PlKD9IfSC3Ir2ouYYQR1uy+g=="],
 
     "discord-api-types": ["discord-api-types@0.37.118", "", {}, "sha512-MQkHHZcytmNQ3nQOBj6a0z38swsmHiROX7hdayfd0eWVrLxaQp/6tWBZ7FO2MCKKsc+W3QWnnfOJTbtyk8C4TQ=="],
 
