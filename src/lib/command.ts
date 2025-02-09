@@ -1,17 +1,18 @@
 import type {
   Awaitable,
-  CommandInteraction,
+  ChatInputCommandInteraction,
   SlashCommandBuilder,
+  SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
 import type { ExtendedClient } from "./client";
 import { commands } from "./collections";
 
 type Command = {
   name: string;
-  data: SlashCommandBuilder;
+  data: SlashCommandBuilder | SlashCommandOptionsOnlyBuilder;
   execute: (props: {
     client: ExtendedClient;
-    interaction: CommandInteraction;
+    interaction: ChatInputCommandInteraction;
     log: (from: string, ...args: unknown[]) => void;
   }) => Awaitable<unknown>;
 };
